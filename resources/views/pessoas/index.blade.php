@@ -50,9 +50,15 @@
             </td>
 
             <td>
+              @if($pessoa->status->value == App\Enums\StatusEnum::Inativo->value)
+                <button type="button" class="btn btn-primary" disabled>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </button>
+              @else
                 <a href="{{ route('pessoas.edit',$pessoa->id)}}" class="btn btn-primary">
                   <span class="glyphicon glyphicon-pencil"></span>
                 </a>
+               @endif
             </td>
 
             <td>
